@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
     ];
     bikeform: FormGroup;
     validMessage: string = '';
+    messageType: string = '';
 
     constructor(private bikeService: BikeService) { }
 
@@ -36,7 +37,8 @@ export class HomeComponent implements OnInit {
 
     submitRegistration() {
         if (this.bikeform.valid) {
-            this.validMessage = "Your bike registration has been submitted successfully. Thank you !";
+            this.validMessage = 'Your bike registration has been submitted successfully. Thank you !';
+            this.messageType = 'success';
             this.bikeService.createBikeRegistration(this.bikeform.value).subscribe(
                 data => {
                     this.bikeform.reset();
@@ -47,7 +49,8 @@ export class HomeComponent implements OnInit {
                 }
             )
         } else {
-            this.validMessage = "Please fill out the form completely before submitting it."
+            this.validMessage = 'Please fill out the form completely before submitting it.';
+            this.messageType = 'error';
         }
     }
 

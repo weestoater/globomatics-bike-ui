@@ -1,0 +1,12 @@
+.alert {
+  padding: 1rem;
+  text-align: center;
+  color: #fff;
+
+  &.error {
+    background: red;
+  }
+  &.success {
+    background: green;
+  }
+}
