@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-bordered table-light">
+                <tr>
+                    <th>Owner Name</th>
+                    <th>Email</th>
+                    <th>Model</th>
+                    <th class="text-right">Purchase Price</th>
+                </tr>
+                <tr *ngFor="let bike of bikes">
+                    <td>
+                        {{ bike.name }}
+                    </td>
+                    <td>
+                        {{ bike.email }}
+                    </td>
+                    <td>
+                        {{ bike.model }}
+                    </td>
+                    <td class="text-right">
+                        {{ bike.purchasePrice }}
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

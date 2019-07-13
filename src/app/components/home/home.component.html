@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 p-2">
+            <form [formGroup]="bikeform" (ngSubmit)="submitRegistration()" novalidate class="form">
+                    <div *ngIf="validMessage != ''">
+                      <div class="alert alert-info border-into">
+                          <p class="text-info">{{validMessage}}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="name">Buyer Name</label>
+                      <input type="text" class="form-control" formControlName="name" id="name" required autofocus/>
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="email" class="form-control" formControlName="email" id="email" required/>
+                    </div>
+                    <div class="form-group">
+                      <label for="phone">Phone</label>
+                      <input type="text" class="form-control" formControlName="phone" id="phone" required/>
+                    </div>
+                    <div class="form-group">
+                      <label for="model">Bike Model</label>
+                      <select class="form-control" formControlName="model" id="model" required>
+                        <option value="">Please select a bike</option>
+                        <option *ngFor="let m of models"
+                                [value]="m">
+                                {{m}}
+                        </option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="serialno">Bike Serial Number</label>
+                      <input type="text" class="form-control" formControlName="serialNumber" id="serialno" required/>
+                    </div>
+                    <div class="form-group">
+                      <label for="price">Purchase Price</label>
+                      <input type="text" class="form-control" formControlName="purchasePrice" id="price" required/>
+                    </div>
+                    <div class="form-group">
+                      <label for="date">Purchase Date</label>
+                      <input type="text" class="form-control" formControlName="purchaseDate" id="date" required/>
+                    </div>
+                    <button type="submit" class="btn btn-primary" >Submit</button>
+                  </form>
+        </div>
+    </div>
+</div>
